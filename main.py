@@ -1,12 +1,14 @@
 from aiogram.utils import executor
 import logging
-from config import db
-from handler import client, callback, extra, adminka
+from config import dp
+from handler import client, callback, extra, adminka, fsm_anketa
 
-adminka.reg_ban(db)
-client.reg_client(db)
-callback.reg_hand_callback(db)
-extra.reg_hand_extra(db)
+fsm_anketa.reg_hand_anketa(dp)
+adminka.reg_ban(dp)
+client.reg_client(dp)
+callback.reg_hand_callback(dp)
+extra.reg_hand_extra(dp)
+
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
-    executor.start_polling(db, skip_updates=True)
+    executor.start_polling(dp, skip_updates=True)

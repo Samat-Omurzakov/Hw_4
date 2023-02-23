@@ -1,10 +1,11 @@
 from aiogram import Dispatcher, types
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from config import bot
+from KeyBoard.Client_kb import start_markup
 
 
 async def start_handler(massage: types.Message):
-    await bot.send_message(massage.chat.id, f'привет {massage.from_user.first_name}')
+    await bot.send_message(massage.chat.id, f'привет {massage.from_user.first_name}', reply_markup=start_markup)
 
 
 async def quiz1(massage: types.Message):
