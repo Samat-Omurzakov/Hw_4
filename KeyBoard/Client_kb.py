@@ -8,8 +8,9 @@ start_markup = ReplyKeyboardMarkup(
 start_button = KeyboardButton('/start')
 info_button = KeyboardButton('/info')
 quiz_button = KeyboardButton('/quiz')
+reg_button = KeyboardButton('/reg')
 
 location = KeyboardButton('location', request_location=True)
 contact = KeyboardButton('contact', request_contact=True)
 
-start_markup.add(start_button, info_button, quiz_button, location, contact)
+start_markup.add(start_button, info_button, quiz_button, location, contact, reg_button)
